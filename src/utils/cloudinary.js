@@ -17,7 +17,8 @@ const uploadOnCloudinary =async(localFilePath)=>{
             resource_type:"auto"
         })
         //file has been uploaded successfull
-        console.log("file is uploaded on cloudinary ", response.url);
+        // console.log("file is uploaded on cloudinary ", response.url);
+        fs.unlinkSync(localFilePath)
         return response;
     } catch (error) {
         fs.unlinkSync(localFilePath)// remove the locally saved tempoary file as the upload
@@ -27,7 +28,7 @@ const uploadOnCloudinary =async(localFilePath)=>{
 }
 
 
-cloudinary.v2.uploader.upload("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
+cloudinary.uploader.upload("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
 {
     public_id:"olympic_flag"
 },
