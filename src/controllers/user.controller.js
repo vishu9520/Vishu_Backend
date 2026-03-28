@@ -194,7 +194,7 @@ console.log(user._id);
 const refreshAccessToken= asyncHandler(async(req,res)=>{
    const incomeingRefreshToken= req.cookie.refreshToken|| req.body.refreshToken
 
-   if(incomeingRefreshToken){
+   if(!incomeingRefreshToken){
     throw new ApiError(401,"unauthorized request")
    }
 
