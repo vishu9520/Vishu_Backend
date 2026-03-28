@@ -1,0 +1,8 @@
+$kind: http-request
+name: https://localhost:8080/api/v1/users/login
+url: https://localhost:8080/api/v1/users/login
+method: POST
+body:
+  type: json
+  content: ""
+order: 3120718468139059
