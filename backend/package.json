@@ -11,10 +11,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "backend": "npm run dev --prefix backend",
-    "frontend": "npm run dev --prefix frontend",
-    "dev": "npm run dev --prefix backend",
-    "build:frontend": "npm run build --prefix frontend"
+    "dev": "nodemon -r dotenv/config src/index.js",
+    "start": "node -r dotenv/config src/index.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
