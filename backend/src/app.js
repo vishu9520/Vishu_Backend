@@ -32,6 +32,11 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+// Health check (used by Render to verify the service is up)
+app.get("/api/v1/health", (req, res) => {
+    res.status(200).json({ status: "ok", service: "MediaHub API", timestamp: new Date().toISOString() })
+})
+
 // Routes declaration
 app.use("/api/v1/users", userRouter)
 
